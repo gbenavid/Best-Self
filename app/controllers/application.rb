@@ -1,5 +1,6 @@
 get '/' do
-  erb :'index'
+  # erb :'index'
+  erb :'users/prev'
 end
 
 get '/users' do
