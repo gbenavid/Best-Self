@@ -1,3 +1,6 @@
 class Week < ActiveRecord::Base
-  # Remember to create a migration!
+	belongs_to :plan
+	has_many :days
+	has_many :goals, :as=> :achievable
+
 end
