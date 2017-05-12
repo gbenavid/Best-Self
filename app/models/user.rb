@@ -22,7 +22,8 @@ class User < ActiveRecord::Base
     if @user && @user.password == password
       @user
     else
-      false
+      nil
     end
   end
+  
 end
