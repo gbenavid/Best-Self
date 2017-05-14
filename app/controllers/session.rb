@@ -1,7 +1,3 @@
-get '/session-viewer' do
-  session.inspect
-end
-
 get '/sessions/new' do
   erb :"sessions/new"
 end

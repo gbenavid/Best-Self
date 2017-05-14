@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   validates :email, presence: true
 
+  has_many :plans
+  has_many :goals, :as=> :achievable
+
   include BCrypt
 
   def full_name
@@ -22,7 +25,8 @@ class User < ActiveRecord::Base
     if @user && @user.password == password
       @user
     else
-      false
+      nil
     end
   end
+  
 end
