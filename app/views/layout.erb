@@ -16,7 +16,6 @@
       <li><a href="/sessions/new">Login</a></li>
     <% end %>
     <% if session[:id] %>
-      <li><a href="/users">All Users</a></li>
       <li><a href="/users/<%=session[:id]%>">My Account</a></li>
       <li><%= erb :"sessions/_delete"%></li>
     <% end %>
