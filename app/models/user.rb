@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
 
   has_many :roadmaps
+  has_many :result_goals, through: :roadmaps, source: :result_goals
   
   include BCrypt
 
