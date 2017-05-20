@@ -1,5 +1,5 @@
 get '/users/new' do
-	erb :'users/new'
+  erb :'users/new'
 end
 
 get '/users/:id' do
@@ -8,8 +8,8 @@ get '/users/:id' do
 end
 
 post '/users' do
-	@user = User.new(params)
-	if @user.save
+  @user = User.new(first_name: params[:first_name], email: params[:email], last_name:params[:last_name], password:params[:password])
+  if @user.save
 		login(@user)
 		redirect "/users/#{@user.id}"
 	else
