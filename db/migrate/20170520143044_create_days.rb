@@ -6,7 +6,7 @@ class CreateDays < ActiveRecord::Migration
   		t.string :lessons_learned
   		t.string :wins
   		t.references :week
-  		
+
   		t.timestamps
   	end
   end
