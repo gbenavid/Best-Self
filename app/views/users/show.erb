@@ -1,10 +1,98 @@
-<h1>User</h1>
-<div class="users-details">
-  <ul>
-    <li>id: <%= @user.id %></li>
-    <li>First Name: <%= @user.first_name %></li>
-    <li>Last Name: <%= @user.last_name %></li>
-    <li>Email: <%= @user.email %></li>
-  </ul>
-  <%= erb :"sessions/_delete", layout: false %>
+<div class="container">
+  <h1>Welcome Back, <%= @user.first_name.capitalize %></h1>
+  <h5><small><strong>Date:</strong></small><small> <%= Date.today %></small></h5>
+  <table class="table container-fluid col-md-6">
+    <thead>
+      <tr class="row">
+        <th>Hour</th>
+        <th>Plans For this Hour</th>
+      </tr>
+    </thead>
+      <tbody class="container col-md-6">
+        <tr class="container col-md-6">
+          <% i = 1 %>
+          <% @user.goals.each do |goal| %>
+                <th scope="row"><% i %></th>
+                <td class="container col-md-1"><%= goal %></td>
+            <% i += 1 %>
+          <% end %>
+        </tr>
+      </tbody>
+  </table>
+  <a href="/task/new">Add a task to your day!</a>
 </div>
+  <div class="container-fluid">
+    <!-- right hand side content -->
+      <!-- Target Goals box -->
+    <div class="container col-md-6">
+      <h1><small>Target Goals</small></h1>
+      <div class="row">
+        <div class="col-md-1">1.</div>
+        <div class="col-md-11">Todays target Goals Todays target Goals, Goals, Goals, Goals, Goals </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"><h6><small>2.</small></h6></div>
+        <div class="col-md-11">Todays target Goals Todays target Goals, Goals, Goals, Goals, Goals </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"><h6><small>3.</small></h6></div>
+        <div class="col-md-11">Todays target Goals Todays target Goals, Goals, Goals, Goals, Goals </div>
+      </div>
+    </div>
+      <!-- Morning Graditude Box -->
+    <div class="col-md-6">
+      <h1><small>Morning Graditude</small></h1>
+      <div class="row">
+        <div class="col-md-1"><h6><small>1.</small></h6></div>
+        <div class="col-md-11">I'm grateful for... everything! I'm grateful for... everything! everything!</div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"><h6><small>2.</small></h6></div>
+        <div class="col-md-11">I'm grateful for... everything! I'm grateful for... everything! everything!</div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"><h6><small>3.</small></h6></div>
+        <div class="col-md-11">I'm grateful for... everything! I'm grateful for... everything! everything!</div>
+      </div>
+    </div>
+      <!-- Evening Graditude box -->
+    <div class="col-md-6">
+      <h1><small>Evening Graditude</small></h1>
+      <div class="row">
+        <div class="col-md-1"><h6><small>1.</small></h6></div>
+        <div class="col-md-11">I'm grateful for... everything! I'm grateful for... everything! everything!</div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"><h6><small>2.</small></h6></div>
+        <div class="col-md-11">I'm grateful for... everything! I'm grateful for... everything! everything!</div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"><h6><small>3.</small></h6></div>
+        <div class="col-md-11">I'm grateful for... everything! I'm grateful for... everything! everything!</div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="container col-md-12">
+      <h1><small>Wins For the Day</small></h1>
+        <p>
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+          I won the day! I won the day!
+        </p>
+    </div>
+  </div>
