@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   validates :email, presence: true
 
+  has_many :roadmaps
+  
   include BCrypt
 
   def full_name
