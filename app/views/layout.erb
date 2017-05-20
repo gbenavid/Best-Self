@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+</head>
+<body>
+  <ul class="nav">
+    <li><a href="/">Home</a></li>
+    <% if session.key?(:id) == false%>
+      <li><a href="/users/new">Signup</a></li>
+      <li><a href="/sessions/new">Login</a></li>
+    <% end %>
+    <% if session[:id] %>
+      <li><a href="/users/<%=session[:id]%>">My Account</a></li>
+      <li><%= erb :"sessions/_delete"%></li>
+    <% end %>
+  </ul>
+  <% if @errors %>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= yield %>
+</body>
+</html>
